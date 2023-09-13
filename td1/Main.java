@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String []args){
+    public static void main(String []args) throws InterruptedException{
 
         // TD n°1 Exercice 1 
         /*T1 t1 = new T1();
@@ -9,14 +9,38 @@ public class Main {
         System.out.println("x");*/
 
         // TD n°1 Exercice 2 algo séquentiel
-        Matrice M1 = new Matrice (1,2,3,4);
-        Matrice M2 = new Matrice (5,6,7,8);
-        Matrice R = M1.MultiplierPar(M2);
-        R.Afficher();
+        Matrice matrice1 = new Matrice(2,2);
+        matrice1.Afficher();
+        System.out.println();
+        Matrice matrice2 = new Matrice(2,2);
+        matrice2.Afficher();
+        System.out.println();
+        long debseq = System.currentTimeMillis();
+        Matrice resultat = matrice1.MultiplierPar(matrice2);
+        long finseq = System.currentTimeMillis();
+        resultat.Afficher();
+        System.out.println(finseq-debseq);
 
         // TD n°1 Exercice 2 algo parallèle
-        CalculCoefMatrice CCM11 = new CalculCoefMatrice();
-        CCM11.start();
+        debseq = System.currentTimeMillis();
+        ThreadGroup threadGroup = new ThreadGroup("MM");
+        Thread t = new Thread();
+        // Un thread pour chaque ligne
+        for (int i = 0; i < 2; i++)
+        {
+            t = new Thread(threadGroup, new Calcul(matrice1, matrice2, resultat, i));
+            t.start();
+        }
+        // On attend que tous les threads termine
+        while (threadGroup.activeCount() != 0)
+        {
+            Thread.sleep(500);
+        }
+        finseq = System.currentTimeMillis();
+        resultat.Afficher();
+        System.out.println(finseq-debseq);
+
+        
 
     } 
 }
