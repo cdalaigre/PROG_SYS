@@ -15,6 +15,8 @@ public class Main {
         R.Afficher();
 
         // TD n°1 Exercice 2 algo parallèle
-        
+        CalculCoefMatrice CCM11 = new CalculCoefMatrice();
+        CCM11.start();
+
     } 
 }
