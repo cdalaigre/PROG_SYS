@@ -9,14 +9,14 @@ public class Main {
         System.out.println("x");*/
 
         // TD n°1 Exercice 2 algo séquentiel
-        Matrice matrice1 = new Matrice(2,2);
+        MatriceTD matrice1 = new MatriceTD(2,2);
         matrice1.Afficher();
         System.out.println();
-        Matrice matrice2 = new Matrice(2,2);
+        MatriceTD matrice2 = new MatriceTD(2,2);
         matrice2.Afficher();
         System.out.println();
         long debseq = System.currentTimeMillis();
-        Matrice resultat = matrice1.MultiplierPar(matrice2);
+        MatriceTD resultat = matrice1.MultiplierPar(matrice2);
         long finseq = System.currentTimeMillis();
         resultat.Afficher();
         System.out.println(finseq-debseq);
@@ -28,7 +28,7 @@ public class Main {
         // Un thread pour chaque ligne
         for (int i = 0; i < 2; i++)
         {
-            t = new Thread(threadGroup, new Calcul(matrice1, matrice2, resultat, i));
+            t = new Thread(threadGroup, new CalculTD(matrice1, matrice2, resultat, i));
             t.start();
         }
         // On attend que tous les threads termine

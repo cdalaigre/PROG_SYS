@@ -1,10 +1,11 @@
-public class Calcul extends Thread{
-    private Matrice M1;
-    private Matrice M2;
-    private Matrice M3; // Matrice resultat
+public class CalculTD extends Thread{
+
+    private MatriceTD M1;
+    private MatriceTD M2;
+    private MatriceTD M3; // Matrice resultat
     private int rowIndex; // Numero de la ligne de m1 a multiplier avec les colonnes de m2
      
-    Calcul(Matrice a, Matrice b, Matrice c, int row)
+    CalculTD(MatriceTD a, MatriceTD b, MatriceTD c, int row)
     {
         M1 = a;
         M2 = b;

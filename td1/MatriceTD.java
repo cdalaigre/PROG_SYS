@@ -1,10 +1,10 @@
-public class Matrice {
+public class MatriceTD {
     
     public
         int matrix[][];
         int nbrow, nbcol;
     
-    public Matrice(int r, int c){
+    public MatriceTD(int r, int c){
         nbrow=r;
         nbcol=c;
         matrix=new int[nbrow][nbcol];
@@ -16,9 +16,9 @@ public class Matrice {
         }
     }
 
-    public Matrice MultiplierPar(Matrice m){
+    public MatriceTD MultiplierPar(MatriceTD m){
 
-        Matrice Res = new Matrice(this.nbrow, m.nbcol) ;
+        MatriceTD Res = new MatriceTD(this.nbrow, m.nbcol) ;
 
         // pour chaque ligne de la matrice 1
         for (int i = 0; i < nbrow; i++)
