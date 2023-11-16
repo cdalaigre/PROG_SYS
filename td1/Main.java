@@ -2,12 +2,12 @@ public class Main {
     public static void main(String []args) throws InterruptedException{
 
         // TD n°1 Exercice 1 
-        /*T1 t1 = new T1();
+        T1 t1 = new T1();
         T2 t2 = new T2();
         t1.start();
         t2.start();   
-        System.out.println("x");*/
-
+        System.out.println("x");
+        
         // TD n°1 Exercice 2 algo séquentiel
         MatriceTD matrice1 = new MatriceTD(2,2);
         matrice1.Afficher();
@@ -40,7 +40,6 @@ public class Main {
         resultat.Afficher();
         System.out.println(finseq-debseq);
 
-        
 
     } 
 }
