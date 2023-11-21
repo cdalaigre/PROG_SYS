@@ -23,18 +23,18 @@ public class Philosophe extends Thread{
             System.out.println("\u001B[33m" + "Philosophe " + this.id + " : je mange..." + "\u001B[0m \n"); 
             nb_bouchees = nb_bouchees - 1;       
             try {
-                Thread.sleep(random.nextInt(2000));
+                Thread.sleep(random.nextInt(5000));
             } catch (InterruptedException e) {}
 
             mesFourchettes.deposer(this.id);
             System.out.println("\u001B[32m" + "Philosophe " + this.id + " : j'ai depose mes fourchettes et je pense un peu" + "\u001B[0m \n");
             try { 
-                Thread.sleep(random.nextInt(2000));}  
+                Thread.sleep(random.nextInt(5000));}  
             catch (InterruptedException e) {}
                
         }
         long finRepas = System.currentTimeMillis();
-        System.out.println("Philosophe " + this.id + " : j'ai fini en " + (float)((float)(finRepas-debutRepas)/1000) + "s...");
+        System.out.println("Philosophe " + this.id + " : j'ai fini en " + (float)((float)(finRepas-debutRepas)/1000) + "s...\n");
         
     }
     
