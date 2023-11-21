@@ -3,9 +3,12 @@ import java.util.Random;
 public class Producteur extends Thread{
 
     private Data myData;
+    private int id;
         
-    public Producteur (Data d){
-        myData = d;        
+    public Producteur (Data d,int id){
+        myData = d;   
+        this.id = id;
+
     }
 
     public void run (){
@@ -16,7 +19,7 @@ public class Producteur extends Thread{
 
 	    for (int i=0; i<13;i++){
             myData.ajouter(importantInfo[i]);
-	        System.out.println("\u001B[32m" + "Producteur a ajoute " + importantInfo[i] + "\u001B[0m \n");
+	        System.out.println("\u001B[32m" + "Producteur " + this.id + " a ajoute " + importantInfo[i] + "\u001B[0m \n");
             try {
                 Thread.sleep(random.nextInt(5000));
             } catch (InterruptedException e) {}
