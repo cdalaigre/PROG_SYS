@@ -4,9 +4,12 @@ import java.util.Random;
 class Ecrivain extends Thread{
 
     Ressource maRessource;
+    private static int idC=0;
+    private int id;
 
     public Ecrivain(Ressource uneRessource){
 	    maRessource = uneRessource;
+        id =idC++;
     }
 
 
@@ -15,7 +18,7 @@ class Ecrivain extends Thread{
 
         try{
             while(true){
-                maRessource.ecrire();
+                maRessource.ecrire(id);
                 try{
                     Thread.sleep(random.nextInt(5)*10000);
                 }

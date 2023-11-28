@@ -20,9 +20,9 @@ public class Ressource {
         verrou.readLock().unlock();
     }
 
-    public void ecrire()  {
+    public void ecrire(int id)  {
         verrou.writeLock().lock();
-        System.out.println("\u001B[31m Ecrivain commence ecriture \u001B[0m \n");
+        System.out.println("\u001B[31m Ecrivain" + id + " commence ecriture \u001B[0m \n");
         try{
             Thread.sleep(5000);
         }
@@ -30,7 +30,7 @@ public class Ressource {
             e.printStackTrace();
         }
         compteur++;
-        System.out.println("\u001B[31;1m Ecrivain termine ecriture \t "+ compteur + "\u001B[0m \n" );
+        System.out.println("\u001B[31;1m Ecrivain" + id + " termine ecriture \t "+ compteur + "\u001B[0m \n" );
         verrou.writeLock().unlock();
     }
 
