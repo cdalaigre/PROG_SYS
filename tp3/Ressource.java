@@ -8,7 +8,7 @@ public class Ressource {
 
     public void lire(int id) {
         verrou.readLock().lock();
-        System.out.println("Lecteur" + id +"  commence lecture");
+        System.out.println("\u001B[32m Lecteur" + id +"  commence lecture \u001B[0m \n");
           try{
 		Thread.sleep(1000);
 	    }
@@ -16,13 +16,13 @@ public class Ressource {
 		e.printStackTrace();
 	    }
         compteur--;
-        System.out.println("Lecteur" +id +" termine lecture \t" + compteur);
+        System.out.println("\u001B[32;1m Lecteur" +id +" termine lecture \t" + compteur + "\u001B[0m \n");
         verrou.readLock().unlock();
     }
 
-    public void ecrire()  {
+    public void ecrire(int id)  {
         verrou.writeLock().lock();
-        System.out.println("Ecrivain commence ecriture");
+        System.out.println("\u001B[31m Ecrivain" + id + " commence ecriture \u001B[0m \n");
         try{
             Thread.sleep(5000);
         }
@@ -30,7 +30,7 @@ public class Ressource {
             e.printStackTrace();
         }
         compteur++;
-        System.out.println("Ecrivain termine ecriture \t" + compteur);
+        System.out.println("\u001B[31;1m Ecrivain" + id + " termine ecriture \t "+ compteur + "\u001B[0m \n" );
         verrou.writeLock().unlock();
     }
 
