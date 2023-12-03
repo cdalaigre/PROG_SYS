@@ -1,0 +1,56 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Diner",
+            "request": "launch",
+            "mainClass": "Diner",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
+            "name": "Incendie",
+            "request": "launch",
+            "mainClass": "Incendie",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
+            "name": "Partage",
+            "request": "launch",
+            "mainClass": "Partage",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
+            "name": "Usine",
+            "request": "launch",
+            "mainClass": "Usine",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
+            "name": "Zone",
+            "request": "launch",
+            "mainClass": "Zone",
+            "projectName": "PROG_SYS_f976c2db"
+        }
+    ]
+}

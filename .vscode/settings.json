@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
         "tp2",
-        "tp3"
+        "tp3",
+        "tp4",
+        "corr"
     ]
 }
