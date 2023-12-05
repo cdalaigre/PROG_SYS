@@ -5,7 +5,7 @@ public class Incendie {
     public static void main(String args[]) {
 
         // la taille de la zone est passé en argument
-        final int SIZE = 24; //Integer.parseInt(args[0]);
+        final int SIZE = 48; //Integer.parseInt(args[0]);
 
         // nombre de coeurs disponibles
         int nbThread = Runtime.getRuntime().availableProcessors();

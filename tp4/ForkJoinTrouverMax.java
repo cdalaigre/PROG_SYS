@@ -17,10 +17,12 @@ public class ForkJoinTrouverMax extends RecursiveTask<Integer> {
       // Si la sous-tâche est assez petite, on peut la résoudre de manière séquentielle
       int max = Integer.MIN_VALUE;
       for (int i = low; i < high; i++) {
-        max = Math.max(max, array[i]);
+          max = Math.max(max, array[i]);
       }
       return max;
-    } else {
+    } 
+    else 
+    {
       // Sinon, on divise la tâche en deux et on lance des sous-tâches
       int mid = low + (high - low) / 2;
       ForkJoinTrouverMax left = new ForkJoinTrouverMax(array, low, mid);
