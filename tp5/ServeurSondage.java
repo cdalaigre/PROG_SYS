@@ -21,10 +21,10 @@ public class ServeurSondage {
                 Socket socketClient= serverSocket.accept();
 
                 //thread initialisé avec le socket client et la ressource sondage
-                ClientSondage ClientSondage = new ClientSondage(socketClient,sondage);
+                Thread t = new Thread( new ClientHandler(socketClient,sondage));
 
                 //thread démarré
-                ClientSondage.start();
+                t.start();
 
             }
         }
