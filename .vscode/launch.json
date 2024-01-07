@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ServeurSondage",
+            "request": "launch",
+            "mainClass": "ServeurSondage",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
             "name": "ClientCalculatrice",
             "request": "launch",
             "mainClass": "ClientCalculatrice",
