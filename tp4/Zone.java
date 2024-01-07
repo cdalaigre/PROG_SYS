@@ -21,12 +21,9 @@ public class Zone {
         //initialisation de l'incendie
         this.carte[1][1] = 3;
         this.carte[1][2] = 3;
-        this.carte[12][2] = 3;
-        this.carte[12][1] = 3;
-        this.carte[11][11] = 3;
-        this.carte[11][12] = 3;
-        this.carte[12][12] = 3;
-        this.carte[12][11] = 3;
+        this.carte[22][12] = 3;
+        this.carte[22][11] = 3;
+        
     }
 
     public int[][] getCarte(){
@@ -60,23 +57,24 @@ public class Zone {
         }
         //zone intact
         else if (val == 0) {
-        for (int k = i - 1; k <= i + 1; k++) {
-            if (k >= 0 && k < this.carte.length) {
-            for (int l = j - 1; l <= j + 1; l++) {
-                if (l >= 0 && l < this.carte[i].length) {
-                /*if (this.carte[k][l] < 4)*/ val += this.carte[k][l];
+            for (int k = i - 1; k <= i + 1; k++) {
+                if (k >= 0 && k < this.carte.length) {
+                    for (int l = j - 1; l <= j + 1; l++) {
+                        if (l >= 0 && l < this.carte[i].length) {
+                            /*if (this.carte[k][l] < 4)*/ val += this.carte[k][l];
+                        }
+                    }
                 }
             }
+            // voisins suffisamment enflammes, la case s'enflamme
+            if (val >= 6) {
+                this.carteT1[i][j] = 1;
+                this.setChanged(true);
             }
-        }
-        // voisins suffisamment enflammes, la case s'enflamme
-        if (val >= 6) {
-            this.carteT1[i][j] = 1;
-            this.setChanged(true);
-        }
-        // voisins pas assez en feu, la case reste intact, recopie de l'ancienne valeur
+            // voisins pas assez en feu, la case reste intact, recopie de l'ancienne valeur
+            else this.carteT1[i][j] = this.carte[i][j];
+        } 
         else this.carteT1[i][j] = this.carte[i][j];
-        } else this.carteT1[i][j] = this.carte[i][j];
     }
 
     public void display() {
