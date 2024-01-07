@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ClientCalculatrice",
+            "request": "launch",
+            "mainClass": "ClientCalculatrice",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
+            "name": "ServeurCalculatrice",
+            "request": "launch",
+            "mainClass": "ServeurCalculatrice",
+            "projectName": "PROG_SYS_f976c2db"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
